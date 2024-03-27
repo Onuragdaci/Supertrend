@@ -1,10 +1,13 @@
+!pip install yfinance
+!pip install vectorbt
+!pip install pandas_ta
+
 import pandas as pd
 import pandas_ta as ta
 import ssl
 from urllib import request
 import yfinance as yf
 import matplotlib.pyplot as plt
-import mplcyberpunk
 import vectorbt as vbt
 import numpy as np
 
@@ -21,8 +24,6 @@ def Hisse_Temel_Veriler():
 def Supertrend(data,SENSITIVITY = 3,ATR_PERIOD = 14):
     Supertrend=data.copy()
         # UT Bot Parameters
-    SENSITIVITY = 3
-    ATR_PERIOD = 14
     Supertrend['xATR'] = ta.atr(data['High'], data['Low'], data['Adj Close'], timeperiod=ATR_PERIOD)
     Supertrend['nLoss'] = SENSITIVITY * Supertrend['xATR']
     Supertrend = Supertrend.dropna()
