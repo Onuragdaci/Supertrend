@@ -87,5 +87,5 @@ for i in range(0,len(Hisseler)):
     except:
         pass
 
-df_True = df_signals[(df_signals['Giriş Sinyali'] == 'True') & (df_signals['Kazanma Oranı[%]'] > 50.0)]
+df_True = df_signals[(df_signals['Giriş Sinyali'] == 'True')]
 print(df_True)
